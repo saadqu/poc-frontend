@@ -1,0 +1,60 @@
+<div class="card bg-light mb-3">
+    <div class="card-header">Edit Data</div>
+    <div class="card-body">
+        <form [formGroup]="pocForm" (ngSubmit)="onSubmit()">
+            <fieldset>
+              <legend>POC Data Form</legend>
+              <ng-container *ngFor="let error of errors">
+                <div *ngIf="errors.length > 0" class="alert alert-dismissible alert-danger">
+                    <strong>Oh snap!</strong> {{ error }}
+                </div>
+              </ng-container>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Name</label>
+                <input type="text" class="form-control" id="exampleInputName1" formControlName="name" placeholder="Enter Name">
+                <ng-container *ngIf="pocForm.controls['name'].invalid && pocForm.controls['name'].touched">
+                    <span style="color: red">Please Enter Name.</span>
+                </ng-container>
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">DOB</label>
+                <input type="date" class="form-control" id="exampleInputBudget" formControlName="dob" placeholder="DOB">
+                <ng-container *ngIf="pocForm.controls['dob'].invalid && pocForm.controls['dob'].touched">
+                    <span style="color: red">Please Enter DOB.</span>
+                </ng-container>
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" formControlName="email" placeholder="Enter email">
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                <ng-container *ngIf="pocForm.controls['email'].invalid && pocForm.controls['email'].touched">
+                    <span style="color: red">Please Enter Email.</span>
+                </ng-container>
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Budget</label>
+                <input type="number" class="form-control" id="exampleInputBudget" formControlName="budget" placeholder="Budget">
+                <ng-container *ngIf="pocForm.controls['budget'].invalid && pocForm.controls['budget'].touched">
+                    <span style="color: red">Please Enter Budget.</span>
+                </ng-container>
+              </div>
+              <fieldset class="form-group">
+                <legend>Gender</legend>
+                <div class="form-check">
+                  <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="gender" id="optionsRadios1" formControlName="gender" value="Male" checked="">
+                    Male
+                  </label>
+                </div>
+                <div class="form-check">
+                    <label class="form-check-label">
+                      <input type="radio" class="form-check-input" name="gender" id="optionsRadios1" formControlName="gender" value="Female" checked="">
+                      Female
+                    </label>
+                  </div>
+              </fieldset>
+              <button type="submit" class="btn btn-primary">Update</button>
+            </fieldset>
+        </form>
+    </div>
+</div>

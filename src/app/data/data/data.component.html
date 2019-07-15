@@ -1,0 +1,23 @@
+<div class="card bg-light mb-3">
+    <div class="card-header">Data</div>
+    <div class="card-body">
+      <table  class="table table-hover">
+          <thead>
+              <ng-container *ngFor="let item of cols">
+                  <td>{{ item.title }}</td>
+              </ng-container>
+          </thead>
+          <tbody>
+              <ng-container *ngFor="let row of rowData">
+                <tr>
+                    <td><a [routerLink]="['/view-data', row.id]" routerLinkActive="router-link-active" > {{ row.name }}</a></td>
+                    <td>{{ row.dob }}</td>
+                    <td>{{ row.email }}</td>
+                    <td>{{ row.budget }}</td>
+                    <td>{{ row.gender }}</td>
+                </tr>
+              </ng-container>
+          </tbody>
+      </table>
+    </div>
+</div>
