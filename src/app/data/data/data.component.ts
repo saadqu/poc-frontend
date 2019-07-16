@@ -10,8 +10,8 @@ export class DataComponent implements OnInit {
 
   public cols: any;
   public rowData: any;
-  constructor(private __dataService: DataService) { 
-    __dataService.getAll().then(res => {
+  constructor(private dataService: DataService) {
+    dataService.getAll().then(res => {
       this.rowData = res.data;
     });
   }
@@ -23,7 +23,7 @@ export class DataComponent implements OnInit {
       { title: 'EMAIL'  },
       { title: 'BUDGET'  },
       { title: 'GENDER'  }
-    ]
+    ];
   }
 
 }

@@ -12,7 +12,7 @@ export class AddDataComponent implements OnInit {
 
   public pocForm: FormGroup;
   public errors: any = [];
-  constructor(private fb: FormBuilder, private __dataService: DataService, private router: Router) {
+  constructor(private fb: FormBuilder, private dataService: DataService, private router: Router) {
     this.pocForm = fb.group({
       name: ['', [Validators.required]],
       dob: ['', [Validators.required]],
@@ -26,15 +26,15 @@ export class AddDataComponent implements OnInit {
   }
 
   onSubmit() {
-    if(this.pocForm.valid) {
-      this.__dataService.add(this.pocForm.value).then(res => {
-        if(res.id) {
+    if (this.pocForm.valid) {
+      this.dataService.add(this.pocForm.value).then(res => {
+        if (res.id) {
           alert('Values Added');
           this.router.navigate(['']);
         }
       });
     } else {
-      let invalidControls = this.findInvalidControls();
+      const invalidControls = this.findInvalidControls();
       invalidControls.forEach(controlName => {
         this.errors.push(controlName.toUpperCase() + ' is Invalid Please type Again Thanks.');
       });
