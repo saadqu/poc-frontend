@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { DataComponent } from './data/data/data.component';
-import { AddDataComponent } from './data/add-data/add-data.component';
-import { ViewDataComponent } from './data/view-data/view-data.component';
+import { DataComponent } from './poc/data/data.component';
+import { AddDataComponent } from './poc/add-data/add-data.component';
+import { ViewDataComponent } from './poc/view-data/view-data.component';
 
 const routes: Routes = [
   {

@@ -6,9 +6,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import { AddDataComponent } from './data/add-data/add-data.component';
-import { ViewDataComponent } from './data/view-data/view-data.component';
-import { DataComponent } from './data/data/data.component';
+import { AddDataComponent } from './poc/add-data/add-data.component';
+import { ViewDataComponent } from './poc/view-data/view-data.component';
+import { DataComponent } from './poc/data/data.component';
 
 @NgModule({
   declarations: [
