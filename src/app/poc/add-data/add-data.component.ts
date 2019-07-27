@@ -25,9 +25,15 @@ export class AddDataComponent implements OnInit {
   ngOnInit() {
   }
 
+  get name() { return this.pocForm.get('name'); }
+  get email() { return this.pocForm.get('email'); }
+  get dob() { return this.pocForm.get('dob'); }
+  get budget() { return this.pocForm.get('budget'); }
+  get gender() { return this.pocForm.get('gender'); }
+
   onSubmit() {
     if (this.pocForm.valid) {
-      this.dataService.add(this.pocForm.value).then(res => {
+      this.dataService.post(this.pocForm.value).then(res => {
         if (res.id) {
           alert('Values Added');
           this.router.navigate(['']);

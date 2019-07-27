@@ -11,7 +11,7 @@ export class DataComponent implements OnInit {
   public cols: any;
   public rowData: any;
   constructor(private dataService: DataService) {
-    dataService.getAll().then(res => {
+    this.dataService.getAll().then(res => {
       this.rowData = res.data;
     });
   }

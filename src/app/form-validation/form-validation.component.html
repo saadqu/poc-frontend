@@ -1,0 +1,14 @@
+<div *ngIf="control.invalid && control.touched" class="alert alert-warning">
+  <div *ngIf="control.errors.required">
+    {{messages.required}}
+  </div>
+  <div *ngIf="control.errors.email">
+    {{messages.email}}
+  </div>
+  <div *ngIf="control.errors.minlength">
+    {{messages.minlength}}
+  </div>
+  <div *ngIf="control.errors.maxlength">
+    {{messages.maxlength}}
+  </div>
+</div>
