@@ -9,6 +9,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { AddDataComponent } from './poc/add-data/add-data.component';
 import { ViewDataComponent } from './poc/view-data/view-data.component';
 import { DataComponent } from './poc/data/data.component';
+import { FormValidationComponent } from './form-validation/form-validation.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { DataComponent } from './poc/data/data.component';
     NavbarComponent,
     AddDataComponent,
     ViewDataComponent,
-    DataComponent
+    DataComponent,
+    FormValidationComponent
   ],
   imports: [
     BrowserModule,
